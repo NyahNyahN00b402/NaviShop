@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using System.Device.Location;
 
 /**
-    NaviShop behaviors
+    NaviShop behaviors for Navigation
     @author: NaviShopTeam
 */
 
@@ -12,17 +14,24 @@ public class NewBehaviourScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Login
+        // Login/Signup
 
         // Get the Location
 
         // Generate the store map
+
+        // Generate promos and coupons
+
+        // If the user is in the store, allow them to search for items
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        // Update the location of the user
+
+        // Navigate to closest item and display arrow
     }
 
     //Generate the map using two sets coordinates
@@ -34,10 +43,8 @@ public class NewBehaviourScript : MonoBehaviour
     // Get current Location.
     int[] getLocation()
     {
-
+        GeoCoordinateWatcher watcher = new GeoCoordinateWatcher();
     }
-
-    // If the current location is within the store, allow the user to search for items
 
     // Have the user enter in the store location
     void promptLocation()
