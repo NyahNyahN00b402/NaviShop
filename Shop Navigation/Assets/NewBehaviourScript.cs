@@ -67,6 +67,9 @@ public class NewBehaviourScript : MonoBehaviour
                 var rot = transform.rotation;
                 transform.rotation = rot * arrow.Euler(90,270,0);
             }
+        } else {
+            // takes the customer to the check out screen if they no longer have any items to search for
+            
         }
     }
 }
