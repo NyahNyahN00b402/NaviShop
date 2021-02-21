@@ -1,3 +1,5 @@
+using Newtonsoft.json;
+
 public class Item
 {
     //Integer representing an Item's sku number
@@ -24,5 +26,10 @@ public class Item
         var request = new RestRequest(Method.GET);
         IRestResponse response = client.Execute(request);
         Console.WriteLine(response.Content);
+    }
+    public static Main(){
+        Item item1 = new Item(222,14);
+        Item.getItemLocation();
+        Console.WriteLine("Hello");
     }
 }
