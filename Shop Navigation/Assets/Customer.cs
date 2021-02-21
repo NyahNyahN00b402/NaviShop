@@ -1,3 +1,5 @@
+using JsonConvert.DeserializeObject;
+using Math;
 
 /**
     Customer information
@@ -26,13 +28,34 @@ public class Customer
     }
     
     // Ask for location access. Suggest nearest store.
-    void suggestLocations()
+    void suggestLocations(long userLat, long userLong)
     {
+        Array<Integer> storesxy = new Array
         var client = new RestClient("https://api.wegmans.io/stores?api-version=2018-10-18&subscription-key=50bf72311a614f5e93ec2c194104a8ff");
         client.Timeout = -1;
         var request = new RestRequest(Method.GET);
         IRestResponse stores = client.Execute(request);
         Console.WriteLine(stores.Content);
-        
+        Stores stores = JsonConvert.DeserializeObject<Stores>(stores.Content);
+        foreach(store : stores)
+        {
+            StoreLocation storeNum = JsonConvert.DeserializeObject<StoreLocation>(store);
+            var client = new RestClient(string.format("https://api.wegmans.io/stores/{storeNum}?api-version=2018-10-18&subscription-key=50bf72311a614f5e93ec2c194104a8ff", storeNum));
+            client.Timeout = -1;
+            var request = new RestRequest(Method.GET);
+            IRestResponse response = client.Execute(request);
+            Console.WriteLine(response.Content);
+            StoreLongLat xy = JsonConvert.DeserializeObject<StoreLongLat>(response.content);
+            storesxy.add(xy);
+        }
+        foreach(xy : storesxy)
+        {
+            if(Math.abs(xy.latitude - userLat) <= 0.5 && Math.abs(xy.longitude - userLong) <= 0.5)
+            {
+                Array<long> suggestedStore = new Array
+                suggestedStore.add(xy.latitude)
+                suggestedStore.add(xy.longitude)
+            }
+        }
     }
 }

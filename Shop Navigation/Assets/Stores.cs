@@ -4,10 +4,16 @@
 */
 public class Stores
 {
-    public List<T> stores {get; set;}
+    public List<StoreLocation> stores {get; set;}
 }
 
 public class StoreLocation
 {
     public int number {get; set;}
+}
+
+public class StoreLongLat
+{
+    public long latitude {get; set;}
+    public long longitude {get; set;}
 }
