@@ -2,6 +2,7 @@ using JsonConvert.DeserializeObject;
 using Math;
 using System;
 using System.Collections.Generic;
+using System.Device.Location;
 
 /**
     Customer information
@@ -29,7 +30,7 @@ public class Customer
         string prompt_password;
 
         // prompt the user for their user name
-        
+
         // check if the user name is in the database and compares hashed passwords
         this.user = prompt_user;
         this.password = prompt_password;    //this should be hashed if we implement it
@@ -38,6 +39,15 @@ public class Customer
     // Get current Location.
     int[] getLocation()
     {
+        // get the coordinates of the customer from the device they are holding
+        GeoCoordinateWatcher watcher;
+
+        watcher.TryStart(false, TimeSpan.FromMilliseconds(1000));   // leave watcher open if not immediate response
+        GeoCoordinateWatcher coord = watcher.Position.Location;
+
+        int[] coords = {coord.Latitude, coord.Longitude};
+
+        return coords;
 
     }
 
