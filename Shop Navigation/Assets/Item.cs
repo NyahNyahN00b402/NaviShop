@@ -19,17 +19,25 @@ public class Item
     }
 
     // Get item Location.
-    string getItemLocation()
+    Array getItemLocation()
     {
         var client = new RestClient("https://api.wegmans.io/products/{sku}/locations/{store}?api-version=2018-10-18&Subscription-Key=50bf72311a614f5e93ec2c194104a8ff", this.sku, this.store);
         client.Timeout = -1;
         var request = new RestRequest(Method.GET);
         IRestResponse response = client.Execute(request);
         Console.WriteLine(response.Content);
+        ItemLocation itemLocation = JsonConvert.DeserializeObject<ItemLocation>(response.Content)
+        location = new Array
+        location.add(itemLocation.name)
+        location.add(itemLocation.aisleSide)
+        location.add(itemLocation.shelfNumber)
+        return location;
     }
+
+
     public static Main(){
         Item item1 = new Item(222,14);
-        Item.getItemLocation();
-        Console.WriteLine("Hello");
+        Array location = Item.getItemLocation();
+        Console.WriteLine(location.ToString());
     }
 }
