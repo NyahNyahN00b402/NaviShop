@@ -1,3 +1,9 @@
+
+/**
+    Item Location information
+    @author: PatheticShoppers
+*/
+
 public class ItemLocation
 {
     public string name {get; set;}

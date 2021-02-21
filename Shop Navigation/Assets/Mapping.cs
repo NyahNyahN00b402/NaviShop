@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 /**
     Mapping information
-    @author: DogematicShoppers
+    @author: PatheticShoppers
 */
 
 public class Mapping 
