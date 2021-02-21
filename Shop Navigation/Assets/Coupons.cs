@@ -1,7 +1,7 @@
 
 /**
     Coupon information
-    @author: NaviShopTeam
+    @author: DogematicShoppers
 */
 
 public class coupons

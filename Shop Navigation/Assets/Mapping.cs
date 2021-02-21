@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 /**
     Mapping information
-    @author: NaviShopTeam
+    @author: DogematicShoppers
 */
 
 public class Mapping 

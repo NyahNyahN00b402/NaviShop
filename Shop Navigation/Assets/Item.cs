@@ -1,7 +1,7 @@
 
 /**
     Item information
-    @author: NaviShopTeam
+    @author: DogematicShoppers
 */
 
 public class Item

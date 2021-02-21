@@ -1,7 +1,7 @@
 
 /**
     Customer information
-    @author: NaviShopTeam
+    @author: DogematicShoppers
 */
 
 public class Customer

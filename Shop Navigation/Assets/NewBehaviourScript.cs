@@ -13,7 +13,7 @@ using Coupons;
 
 /**
     NaviShop running
-    @author: NaviShopTeam
+    @author: DogematicShoppers
 */
 
 public class NewBehaviourScript : MonoBehaviour
