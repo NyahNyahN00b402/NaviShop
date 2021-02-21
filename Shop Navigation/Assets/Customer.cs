@@ -70,7 +70,7 @@ public class Customer
         foreach(Stores store in stores) // I changed this, but I don't really know what type of information is stored in each iteration of Stores !!!!!!!!!!!!!!!!!!!!!
         {
             StoreLocation storeNum = JsonConvert.DeserializeObject<StoreLocation>(store);
-            var client = new RestClient(string.format("https://api.wegmans.io/stores/{storeNum}?api-version=2018-10-18&subscription-key=50bf72311a614f5e93ec2c194104a8ff", storeNum));
+            var client = new RestClient(string.format("https://api.wegmans.io/stores/{0}?api-version=2018-10-18&subscription-key=50bf72311a614f5e93ec2c194104a8ff", storeNum));
             client.Timeout = -1;
             var request = new RestRequest(Method.GET);
             IRestResponse response = client.Execute(request);

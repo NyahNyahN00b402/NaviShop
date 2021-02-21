@@ -21,7 +21,7 @@ public class Item
     // Get item Location.
     Array getItemLocation()
     {
-        var client = new RestClient("https://api.wegmans.io/products/{sku}/locations/{store}?api-version=2018-10-18&Subscription-Key=50bf72311a614f5e93ec2c194104a8ff", this.sku, this.store);
+        var client = new RestClient("https://api.wegmans.io/products/{0}/locations/{1}?api-version=2018-10-18&Subscription-Key=50bf72311a614f5e93ec2c194104a8ff", this.sku, this.store);
         client.Timeout = -1;
         var request = new RestRequest(Method.GET);
         IRestResponse response = client.Execute(request);
