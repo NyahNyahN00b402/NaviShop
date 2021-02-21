@@ -15,6 +15,6 @@ public class ShoppingList
     }
 
     public void rmFromList(Item item){
-        list.remove(item);
+        return list.remove(item);
     }
 }
