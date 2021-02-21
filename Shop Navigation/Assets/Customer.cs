@@ -82,9 +82,7 @@ public class Customer
         {
             if(Math.abs(xy.latitude - userLat) <= 0.5 && Math.abs(xy.longitude - userLong) <= 0.5)
             {
-                Array<long> suggestedStore = new Array();
-                suggestedStore.add(xy.latitude);
-                suggestedStore.add(xy.longitude);
+                int suggestedStore = storesxy.indexOf(xy) + 1;
             }
         }
     }
