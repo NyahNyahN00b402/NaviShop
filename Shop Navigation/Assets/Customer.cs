@@ -24,10 +24,15 @@ public class Customer
     {
 
     }
-
+    
     // Ask for location access. Suggest nearest store.
     void suggestLocations()
     {
-
+        var client = new RestClient("https://api.wegmans.io/stores?api-version=2018-10-18&subscription-key=50bf72311a614f5e93ec2c194104a8ff");
+        client.Timeout = -1;
+        var request = new RestRequest(Method.GET);
+        IRestResponse stores = client.Execute(request);
+        Console.WriteLine(stores.Content);
+        
     }
 }
