@@ -34,6 +34,24 @@ public class Item
         return location;
     }
 
+    //Search by Key-Word for items
+    //@return: A list of item sku numbers that have the key word
+    Array searchItem(String query)
+    {
+        Array skus = new Array;
+        var client = new RestClient(string.format("https://api.wegmans.io/products/search?query={query}&api-version=2018-10-18&Subscription-Key=50bf72311a614f5e93ec2c194104a8ff", query));
+        client.Timeout = -1;
+        var request = new RestRequest(Method.GET);
+        IRestResponse response = client.Execute(request);
+        Console.WriteLine(response.Content);
+        ItemResults results = JsonConvert.DeserializeObject<ItemResults>(response.Content);
+        foreach(ItemResults result in results)
+        {
+            ItemSku sku = JsonConvert.DeserializeObject<ItemSku>(item)
+            skus.add(sku);            
+        }
+        return skus;
+    }
 
     public static Main(){
         Item item1 = new Item(222,14);
