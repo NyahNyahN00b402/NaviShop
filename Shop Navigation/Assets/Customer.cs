@@ -11,6 +11,8 @@ using System.Collections.Generic;
 public class Customer
 {
     private int[] currentLocation;
+    private string user;
+    private string password;
 
     // Checks what direction the customer is travelling
     public bool isNavigating(string direction){
@@ -22,7 +24,15 @@ public class Customer
 
     // Login/Signup.
     void promptLogin(){
+        // new variables for Login
+        string prompt_user;
+        string prompt_password;
 
+        // prompt the user for their user name
+        
+        // check if the user name is in the database and compares hashed passwords
+        this.user = prompt_user;
+        this.password = prompt_password;    //this should be hashed if we implement it
     }
 
     // Get current Location.
