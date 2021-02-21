@@ -12,7 +12,7 @@ using ShoppingList;
 using Coupons;
 
 /**
-    NaviShop behaviors
+    NaviShop running
     @author: NaviShopTeam
 */
 

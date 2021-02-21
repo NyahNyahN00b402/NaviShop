@@ -1,3 +1,9 @@
+
+/**
+    Item information
+    @author: NaviShopTeam
+*/
+
 public class Item
 {
     // Get item Location.

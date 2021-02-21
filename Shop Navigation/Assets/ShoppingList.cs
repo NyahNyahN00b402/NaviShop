@@ -1,5 +1,6 @@
 /**
-Class to keep track of the Shopping list
+    Shopping list information
+    @author: NaviShopTeam
 */
 
 using System;
@@ -7,5 +8,5 @@ using System.Collections.Generic;
 
 public class ShoppingList 
 {
-    private List;
+    private Mapping = new Mapping();
 }

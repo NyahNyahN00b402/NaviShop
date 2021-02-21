@@ -1,3 +1,9 @@
+
+/**
+    Customer information
+    @author: NaviShopTeam
+*/
+
 public class Customer
 {
     private int[] currentLocation;

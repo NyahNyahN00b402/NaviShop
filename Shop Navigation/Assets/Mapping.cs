@@ -1,6 +1,11 @@
 using System;
 using System.Collections.Generic;
 
+/**
+    Mapping information
+    @author: NaviShopTeam
+*/
+
 public class Mapping 
 {
     // The corners of the store
