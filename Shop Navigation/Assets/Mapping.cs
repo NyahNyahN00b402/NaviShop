@@ -6,7 +6,7 @@ public class Mapping
     // The corners of the store
     private int[] corner1 = new int[2];
     private int[] corner2 = new int[2];
-    private List<int> aisles;
+    private List<String> aisles;
 
 
     // Constructor for mapping
@@ -25,7 +25,7 @@ public class Mapping
         return  coords;
     }
 
-    /// <summary> Returns the aisle at index </summary>
+    /// <summary> Returns the aisle at location </summary>
     public getAisle(int longitude, int latitude)
     {
 
