@@ -21,7 +21,7 @@ public class Item
     // Get item Location.
     Array getItemLocation()
     {
-        var client = new RestClient("https://api.wegmans.io/products/{sku}/locations/{store}?api-version=2018-10-18&Subscription-Key=50bf72311a614f5e93ec2c194104a8ff", this.sku, this.store);
+        var client = new RestClient("https://api.wegmans.io/products/{0}/locations/{1}?api-version=2018-10-18&Subscription-Key=50bf72311a614f5e93ec2c194104a8ff", this.sku, this.store);
         client.Timeout = -1;
         var request = new RestRequest(Method.GET);
         IRestResponse response = client.Execute(request);
@@ -39,7 +39,7 @@ public class Item
     Array searchItem(String query)
     {
         Array skus = new Array;
-        var client = new RestClient(string.format("https://api.wegmans.io/products/search?query={query}&api-version=2018-10-18&Subscription-Key=50bf72311a614f5e93ec2c194104a8ff", query));
+        var client = new RestClient(string.format("https://api.wegmans.io/products/search?query={0}&api-version=2018-10-18&Subscription-Key=50bf72311a614f5e93ec2c194104a8ff", query));
         client.Timeout = -1;
         var request = new RestRequest(Method.GET);
         IRestResponse response = client.Execute(request);
