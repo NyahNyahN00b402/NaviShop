@@ -39,10 +39,34 @@ public class NewBehaviourScript : MonoBehaviour
     void Update()
     {
         // if the customer is navigating, update the screen with an arrow pointing in the direction that they need to go
-        if(customer.isNavigating())
-        {
+        if(!(customer.isNavigating("not"))){
+            if(customer.isNavigating("forward"))
+            {
+                // display forward arrow
+                var rot = transform.rotation;
+                transform.rotation = rot * arrow.Euler(90,0,0);
+            }
 
+            if(customer.isNavigating("backward"))
+            {
+                // display backward arrow
+                var rot = transform.rotation;
+                transform.rotation = rot * arrow.Euler(90,180,0);
+            }
+            
+            if(customer.isNavigating("right"))
+            {
+                // display right arrow
+                var rot = transform.rotation;
+                transform.rotation = rot * arrow.Euler(90,90,0);
+            }
+
+            if(customer.isNavigating("left"))
+            {
+                // display left arrow
+                var rot = transform.rotation;
+                transform.rotation = rot * arrow.Euler(90,270,0);
+            }
         }
-        
     }
 }
