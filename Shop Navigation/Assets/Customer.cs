@@ -12,10 +12,12 @@ public class Customer
 {
     private int[] currentLocation;
 
-    // Checks if the customer is navigating
+    // Checks what direction the customer is travelling
     public bool isNavigating(string direction){
-        return false;
-        // IMPLEMENT REST OF FUNCTION
+        if (direction != "forward" || direction != "right" || direction != "left" || direction != "backward"){
+            return false;
+        }
+        return true;
     }
 
     // Login/Signup.
