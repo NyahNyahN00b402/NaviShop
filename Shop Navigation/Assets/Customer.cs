@@ -45,7 +45,7 @@ public class Customer
         IRestResponse stores = client.Execute(request);
         Console.WriteLine(stores.Content);
         Stores stores = JsonConvert.DeserializeObject<Stores>(stores.Content);
-        foreach(store : stores)
+        foreach(Stores store in stores) // I changed this, but I don't really know what type of information is stored in each iteration of Stores !!!!!!!!!!!!!!!!!!!!!
         {
             StoreLocation storeNum = JsonConvert.DeserializeObject<StoreLocation>(store);
             var client = new RestClient(string.format("https://api.wegmans.io/stores/{storeNum}?api-version=2018-10-18&subscription-key=50bf72311a614f5e93ec2c194104a8ff", storeNum));
@@ -56,7 +56,7 @@ public class Customer
             StoreLongLat xy = JsonConvert.DeserializeObject<StoreLongLat>(response.content);
             storesxy.add(xy);
         }
-        foreach(xy : storesxy)
+        foreach(int xy in storesxy)
         {
             if(Math.abs(xy.latitude - userLat) <= 0.5 && Math.abs(xy.longitude - userLong) <= 0.5)
             {
