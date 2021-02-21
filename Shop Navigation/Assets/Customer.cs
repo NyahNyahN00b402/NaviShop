@@ -11,7 +11,7 @@ public class Customer
     private int[] currentLocation;
 
     // Checks if the customer is navigating
-    public bool isNavigating(){
+    public bool isNavigating(string direction){
         return false;
         // IMPLEMENT REST OF FUNCTION
     }
