@@ -10,6 +10,12 @@ public class Customer
 {
     private int[] currentLocation;
 
+    // Checks if the customer is navigating
+    public bool isNavigating(){
+        return false;
+        // IMPLEMENT REST OF FUNCTION
+    }
+
     // Login/Signup.
     void promptLogin(){
 
